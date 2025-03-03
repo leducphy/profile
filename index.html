@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Duc Phi - Backend Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card {
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+
+        .skill-pill:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .animated-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="sticky top-0 z-50 bg-indigo-600 shadow-lg">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-white font-bold text-xl">Phi Le</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-white hover:text-indigo-200 nav-link">Home</a>
+                <a href="#about" class="text-white hover:text-indigo-200 nav-link">About</a>
+                <a href="#skills" class="text-white hover:text-indigo-200 nav-link">Skills</a>
+                <a href="#experience" class="text-white hover:text-indigo-200 nav-link">Experience</a>
+                <a href="#projects" class="text-white hover:text-indigo-200 nav-link">Projects</a>
+                <a href="#contact" class="text-white hover:text-indigo-200 nav-link">Contact</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="animated-bg py-20 md:py-32">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left md:pr-10" data-aos="fade-right">
+                <h1 class="text-white text-4xl md:text-5xl font-bold leading-tight mb-4">Le Duc Phi</h1>
+                <h2 class="text-white text-2xl md:text-3xl font-semibold mb-6 typing-animation">Backend Developer</h2>
+                <p class="text-white text-lg md:text-xl mb-8">Passionate IT enthusiast exploring emerging technologies
+                    and making significant contributions to innovative projects.</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#contact"
+                        class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg hover:bg-indigo-100 transition duration-300 shadow-lg">Contact
+                        Me</a>
+                    <a href="#projects"
+                        class="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300 shadow-lg">View
+                        Projects</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center" data-aos="fade-left">
+                <img src="https://github.com/leducphy.png" alt="Le Duc Phi" class="profile-img w-64 h-64 object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">About Me</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 md:pr-10" data-aos="fade-right">
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        I am a passionate IT enthusiast, driven by a deep interest in emerging technologies and new
+                        areas within the IT field. My proactive research approach and strong problem-solving skills fuel
+                        my eagerness to explore uncharted territories, broaden my abilities, and make significant
+                        contributions to innovative projects.
+                    </p>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-map-marker-alt text-indigo-600 text-xl mr-4"></i>
+                        <span class="text-gray-700">Ha Noi</span>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-envelope text-indigo-600 text-xl mr-4"></i>
+                        <a href="mailto:leducphi1952002@gmail.com"
+                            class="text-gray-700 hover:text-indigo-600">leducphi1952002@gmail.com</a>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-phone text-indigo-600 text-xl mr-4"></i>
+                        <a href="tel:0862779990" class="text-gray-700 hover:text-indigo-600">0862779990</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-github text-indigo-600 text-xl mr-4"></i>
+                        <a href="https://github.com/leducphy" target="_blank"
+                            class="text-gray-700 hover:text-indigo-600">github.com/leducphy</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0" data-aos="fade-left">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Education</h3>
+                    <div class="flex items-start mb-6">
+                        <div class="text-indigo-600 mr-4 mt-1">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800">FPT University - Software Engineering</h4>
+                            <p class="text-gray-600">4th year • Oct 2020–Oct 2024</p>
+                            <p class="text-gray-600">GPA: 3.18/4 (7.95/10)</p>
+                            <p class="text-gray-700 mt-2">I have studied Software Engineering with a focus on the core
+                                language is .NET.</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6 mt-8">Language</h3>
+                    <div class="flex items-start">
+                        <div class="text-indigo-600 mr-4 mt-1">
+                            <i class="fas fa-language text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800">English</h4>
+                            <p class="text-gray-700">Proficient in communication, reading, writing, and listening.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="bg-indigo-100 inline-block p-3 rounded-full">
+                            <i class="fas fa-laptop-code text-indigo-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-4">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">Bootstrap</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">Tailwind
+                            CSS</span>
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">ReactJS</span>
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">Flutter</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="bg-indigo-100 inline-block p-3 rounded-full">
+                            <i class="fas fa-database text-indigo-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-4">Backend / Database</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">SQL
+                            Server</span>
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">MySQL</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">ASP.NET
+                            Web API</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="bg-indigo-100 inline-block p-3 rounded-full">
+                            <i class="fas fa-server text-indigo-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-4">DevOps</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">Docker</span>
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">Jenkins</span>
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">Linux</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="bg-indigo-100 inline-block p-3 rounded-full">
+                            <i class="fab fa-git-alt text-indigo-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-4">Version Control (Git)</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">Git</span>
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">GitHub</span>
+                        <span
+                            class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm skill-pill">GitLab</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Experience & Certificates
+            </h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 md:pr-10" data-aos="fade-right">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Work Experience</h3>
+                    <div class="relative pl-8 pb-10 border-l-2 border-indigo-500">
+                        <div
+                            class="absolute -left-2 top-0 h-6 w-6 rounded-full bg-indigo-500 flex items-center justify-center">
+                            <div class="h-3 w-3 rounded-full bg-white"></div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800">Flutter Developer • EZTEK</h4>
+                            <p class="text-gray-600 mb-3">Apr 2023 - Oct 2023</p>
+                            <p class="text-gray-700">Gained hands-on experience in Flutter development, focusing on
+                                state management and real-world project implementation during my OJT program.</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6 mt-8">Teamwork Experience</h3>
+                    <div class="relative pl-8 pb-8 border-l-2 border-indigo-500">
+                        <div
+                            class="absolute -left-2 top-0 h-6 w-6 rounded-full bg-indigo-500 flex items-center justify-center">
+                            <div class="h-3 w-3 rounded-full bg-white"></div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800">CodegangZ • Facebook Page</h4>
+                            <p class="text-gray-600 mb-3">Jan 2020 - Now</p>
+                            <a href="https://www.facebook.com/CodegangZ" target="_blank"
+                                class="text-indigo-600 hover:text-indigo-800 mb-3 inline-block">https://www.facebook.com/CodegangZ</a>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                <li>Sharing experiences during studying at FPT University</li>
+                                <li>Feedback to support students who have difficulty studying</li>
+                                <li>Share study materials and exam preparation and source code throughout the learning
+                                    process</li>
+                                <li>Mini-games, quizzes, giveaways to create interesting things for students in the
+                                    learning process</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0" data-aos="fade-left">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Certificates</h3>
+                    <div class="space-y-6">
+                        <div
+                            class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Software Development Lifecycle</h4>
+                            <p class="text-gray-600 mb-3">University of Minnesota</p>
+                            <a href="https://coursera.org/share/febcbfabdaccebf" target="_blank"
+                                class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                                <span>View Certificate</span>
+                                <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">User Experience Research and Design
+                            </h4>
+                            <p class="text-gray-600 mb-3">University of Michigan</p>
+                            <a href="https://coursera.org/share/4ce4dbe2a4121042473c3bd179e372cc" target="_blank"
+                                class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                                <span>View Certificate</span>
+                                <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Projects</h2>
+            <div class="space-y-12">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800">Online Learning Platform</h3>
+                        <p class="text-gray-600 mb-4">Web API/Web • 2024</p>
+                        <a href="https://gitlab.com/leducphy/PRN231_Project.git" target="_blank"
+                            class="text-indigo-600 hover:text-indigo-800 mb-6 inline-block">
+                            <i class="fab fa-gitlab mr-2"></i>
+                            Repository Link
+                        </a>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">.NET 6</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">HTML5</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">CSS3</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">jQuery</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">Bootstrap</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">SQL Server</span>
+                        </div>
+                        <p class="text-gray-700 mb-4"><span class="font-semibold">Team size:</span> 5</p>
+                        <p class="text-gray-700"><span class="font-semibold">Description:</span> Developed an Online
+                            Learning Platform using .NET Web API and SQL Server for backend, with a frontend built using
+                            HTML, CSS, JavaScript, jQuery, and Bootstrap. Responsible for setting up the project
+                            structure, implementing authentication, managing CRUD operations, and handling Git version
+                            control.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800">Inventory Management System for FPT University</h3>
+                        <p class="text-gray-600 mb-4">Web API/Web • 2024</p>
+                        <a href="https://gitlab.com/SEP490-G38/ims-backend.git" target="_blank"
+                            class="text-indigo-600 hover:text-indigo-800 mb-6 inline-block">
+                            <i class="fab fa-gitlab mr-2"></i>
+                            Repository Link
+                        </a>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">ASP.NET</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">ReactJS</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">SQL Server</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Docker</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">Jenkins</span>
+                        </div>
+                        <p class="text-gray-700 mb-4"><span class="font-semibold">Team size:</span> 5</p>
+                        <p class="text-gray-700 mb-6"><span class="font-semibold">Description:</span> IMS (Inventory
+                            Management System) helps FPT University's administrative staff streamline the management of
+                            consumable supplies and materials. It replaces manual Excel-based tracking with a secure,
+                            centralized system, ensuring efficient resource management, role-based access control, and
+                            real-time notifications. The system leverages OAuth authentication, JWT-based sessions, and
+                            SignalR for seamless communication, providing a scalable and user-friendly solution.</p>
+
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Roles:</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+                            <li>Designed and set up the project's base architecture</li>
+                            <li>Implemented authentication using OAuth (Google) and role-based access control (RBAC
+                            <li>Implemented CRUD operations for inventory management</li>
+                            <li>Managed source code and collaboration using Git and GitLab</li>
+                            <li>Deployed the system on Linux using Docker and automated deployments with Jenkins</li>
+                        </ul>
+
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Documents:</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Software Requirement Specification</li>
+                            <li>Software Design Document</li>
+                            <li>Test Documentation</li>
+                            <li>Software User Guides</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 gradient-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-12" data-aos="fade-up">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 md:pr-10" data-aos="fade-right">
+                    <h3 class="text-xl font-semibold text-white mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Location</h4>
+                                <p class="text-white opacity-80">Ha Noi, Vietnam</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Email</h4>
+                                <a href="mailto:leducphi1952002@gmail.com"
+                                    class="text-white opacity-80 hover:opacity-100">leducphi1952002@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Phone</h4>
+                                <a href="tel:0862779990" class="text-white opacity-80 hover:opacity-100">0862779990</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fab fa-github text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">GitHub</h4>
+                                <a href="https://github.com/leducphy" target="_blank"
+                                    class="text-white opacity-80 hover:opacity-100">github.com/leducphy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0" data-aos="fade-left">
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Send Me a Message</h3>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    placeholder="Your name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    placeholder="Your email">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    placeholder="Subject">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    placeholder="Your message"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg">Send
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
